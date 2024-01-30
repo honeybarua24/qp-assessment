@@ -20,7 +20,7 @@ $ npm run start
 ```
 
 ## API's Description
-
+ ```bash
 # API's are JWT token protected. Hence to excute API's , Admin and User have to execute /login API to generate the JWT token for running groceries management API. Token will adhere to the roles and permission for executing the API's.
 
 # Admin 
@@ -63,3 +63,4 @@ $ npm run start
 # books the items from groceries available in inventory.
 # data body expects the array of items id and quantity. 
 # e.g. [{id :1 , quantity : 3} , ...]
+```
