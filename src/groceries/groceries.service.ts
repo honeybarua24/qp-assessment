@@ -2,6 +2,7 @@ import { BadRequestException, HttpStatus, Inject, Injectable, InternalServerErro
 import { Sequelize } from 'sequelize-typescript';
 import { Groceries } from './groceries.entity';
 import { Op } from 'sequelize'; // Import Op from sequelize
+import { UpdateGroceriesDTO } from './dto/update.dto';
 
 @Injectable()
 export class GroceriesService {
@@ -76,7 +77,7 @@ export class GroceriesService {
      * @param body : Object with details to be updated.
      * @returns : Message with status code.
      */
-    async updateGroceries(id: number , body: any){
+    async updateGroceries(id: number , body: UpdateGroceriesDTO){
         try{
             const grocery = await Groceries.findByPk(id);
 

@@ -23,6 +23,9 @@ $ npm run start
  ```bash
 # API's are JWT token protected. Hence to excute API's , Admin and User have to execute /login API to generate the JWT token for running groceries management API. Token will adhere to the roles and permission for executing the API's.
 
+# Project folder contains a JSON file that can be imported to postman for executing API's.
+# File name : api-collection.json
+
 # Admin 
 # Username : Honey
 # Passwrd : Honey@12345

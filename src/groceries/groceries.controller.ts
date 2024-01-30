@@ -1,8 +1,10 @@
-import { Controller, Get, UseGuards, Request, Delete, Patch, Post, Body, Param, HttpStatus } from '@nestjs/common';
+import { Controller, Get, UseGuards, Request, Delete, Patch, Post, Body, Param, HttpStatus , ValidationPipe } from '@nestjs/common';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { RolesGuard } from '../auth/roles.guard';
 import { Roles } from '../auth/roles.decorator';
 import { GroceriesService } from './groceries.service';
+import { AddGroceriesDTO } from './dto/add.dto';
+import { UpdateGroceriesDTO } from './dto/update.dto';
 
 @Controller('groceries')
 export class GroceriesController {
@@ -33,7 +35,7 @@ export class GroceriesController {
   @UseGuards(AuthGuard, RolesGuard)
   @Roles('Admin')
   @Post('/add')
-  async addGroceries(@Request() req , @Body() body) {
+  async addGroceries(@Request() req , @Body(new ValidationPipe()) body : AddGroceriesDTO) {
     try{
       return await this.GroceriesService.addGroceries(body);
     }catch(error){
@@ -44,7 +46,7 @@ export class GroceriesController {
   @UseGuards(AuthGuard, RolesGuard)
   @Roles('Admin')
   @Patch('/update/:id')
-  updateGroceries(@Request() req , @Param('id') id : number , @Body() body : any) {
+  updateGroceries(@Request() req , @Param('id') id : number , @Body(new ValidationPipe()) body : UpdateGroceriesDTO) {
     try{
         return this.GroceriesService.updateGroceries(id, body);
     }catch(error){
