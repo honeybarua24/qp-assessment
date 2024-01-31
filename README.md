@@ -24,14 +24,6 @@ $ npm install
 $ npm run start
 ```
 
-## Running with Docker 
-
-```bash
-# development
-$ npm run start
-```
-
-
 ## Assumptions
 ```bash
 #Module contains 2 roles : Admin and User
