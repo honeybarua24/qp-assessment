@@ -32,7 +32,7 @@ export class GroceriesService {
     }
 
     /**
-     * @returns Array of objects for groceries available in inventory.
+     * @returns Array of objects for groceries available in inventory i.e. count > 0.
      */
     async viewAvailableGroceries(){
         try{

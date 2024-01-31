@@ -8,7 +8,7 @@ Groceries and Inventory management API's bound to permissions and roles to perfo
 # Import the sql file available in the project folder.
 # Database name : groceries.
 # Table name : groceries.
-# File name : .sql
+# File name : groceries.sql
 ```
 
 ## Installation
