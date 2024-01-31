@@ -13,7 +13,7 @@ export class AuthService {
     * Function return JWT token for authenticating/authorizing the API requests.
     * @param username 
     * @param pass 
-    * @returns 
+    * @returns access token for user being logged in.
     */   
   async signIn(username, pass) {
     const user = await this.usersService.findOne(username);

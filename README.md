@@ -1,10 +1,15 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
 ## Description
 
-Groceries and Inventory management API's.
+Groceries and Inventory management API's bound to permissions and roles to perform specific operations.
+
+## Database Management
+
+```bash
+# Import the sql file available in the project folder.
+# Database name : groceries.
+# Table name : groceries.
+# File name : .sql
+```
 
 ## Installation
 
@@ -17,6 +22,20 @@ $ npm install
 ```bash
 # development
 $ npm run start
+```
+
+## Running with Docker 
+
+```bash
+# development
+$ npm run start
+```
+
+
+## Assumptions
+```bash
+#Module contains 2 roles : Admin and User
+# MySQL relational database is considered.
 ```
 
 ## API's Description
@@ -38,27 +57,27 @@ $ npm run start
 ## API Routes
 
 # /login
-# To generate JWT access token,
+# To generate JWT access token for executing API's.
 
 # /view/:id?
 # return the available groceries data , If passed with groceries id will return the specific groceries data.
 
 # /available
-# returns the available groceries in inventory.
+# returns the available groceries in inventory , quantity greater than 0.
 
 # /add
-# API to POST groceries in inventory.
+# API to POST new groceries in inventory.
 # expects data body {name : ?, price :  ?, quantity : ? , category : ? , description : ? }
 
 # /update/:id
-# updates the groceries items in inventory.
+# updates the groceries items in inventory against the identifier.
 # expects data body {name : ? , price : ? , quantity : ? }.
 
 # /delete/:id
-# deletes the groceries against the id from inventory.
+# deletes the groceries against the identifier from inventory.
 
 # /inventory/:id
-# Manages the inventory
+# Manages the inventory to add or delete the items in inventory.
 # expects the data body against the id passed in prama with quantity and operation type.
 # e.g. {quantity : 2 , operation: 1} , 1/0 are for adding or deleting the items from inventory.
 

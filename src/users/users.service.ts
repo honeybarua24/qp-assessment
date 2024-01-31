@@ -2,6 +2,10 @@ import { Injectable } from '@nestjs/common';
 
 export type User = {userId : number , username : string , password : string , role : string};
 
+
+/**
+ * User management is static , Single Admin and Single user has been considered. Their details have been assumed , these can be changed as per requirement.
+ */
 @Injectable()
 export class UsersService {
   private readonly users = [
